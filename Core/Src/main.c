@@ -127,7 +127,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	while (1) {
-		/* USER CODE END WHILE */
+    /* USER CODE END WHILE */
 
 		HAL_ADC_PollForConversion(&hadc1, 1000);
 		readValue = HAL_ADC_GetValue(&hadc1);
@@ -135,7 +135,7 @@ int main(void)
 		var = AnalogHandler(readValue);
 		LEDHandler(var);
 
-		/* USER CODE BEGIN 3 */
+    /* USER CODE BEGIN 3 */
 	}
   /* USER CODE END 3 */
 }
@@ -331,12 +331,16 @@ static void MX_DMA_Init(void)
   */
 static void MX_GPIO_Init(void)
 {
+/* USER CODE BEGIN MX_GPIO_Init_1 */
+/* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
+/* USER CODE BEGIN MX_GPIO_Init_2 */
+/* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */
@@ -354,7 +358,7 @@ void LEDHandler(int Value) {
 	//lógica para acionamento sequencial
 
 	if (Value >= 0 && Value < 10) {
-		Set_LED(0, 255, 0, 0);
+		Set_LED(0, 0, 255, 0);
 		Set_LED(1, 0, 0, 0);
 		Set_LED(2, 0, 0, 0);
 		Set_LED(3, 0, 0, 0);
@@ -365,8 +369,8 @@ void LEDHandler(int Value) {
 		Set_LED(8, 0, 0, 0);
 		Set_LED(9, 0, 0, 0);
 	} else if (Value >= 11 && Value < 20) {
-		Set_LED(0, 255, 0, 0);
-		Set_LED(1, 255, 0, 0);
+		Set_LED(0, 0, 255, 0);
+		Set_LED(1, 0, 255, 0);
 		Set_LED(2, 0, 0, 0);
 		Set_LED(3, 0, 0, 0);
 		Set_LED(4, 0, 0, 0);
@@ -376,9 +380,9 @@ void LEDHandler(int Value) {
 		Set_LED(8, 0, 0, 0);
 		Set_LED(9, 0, 0, 0);
 	} else if (Value >= 21 && Value < 30) {
-		Set_LED(0, 255, 0, 0);
-		Set_LED(1, 255, 0, 0);
-		Set_LED(2, 255, 0, 0);
+		Set_LED(0, 0, 255, 0);
+		Set_LED(1, 0, 255, 0);
+		Set_LED(2, 0, 255, 0);
 		Set_LED(3, 0, 0, 0);
 		Set_LED(4, 0, 0, 0);
 		Set_LED(5, 0, 0, 0);
@@ -387,9 +391,9 @@ void LEDHandler(int Value) {
 		Set_LED(8, 0, 0, 0);
 		Set_LED(9, 0, 0, 0);
 	} else if (Value >= 31 && Value < 40) {
-		Set_LED(0, 255, 0, 0);
-		Set_LED(1, 255, 0, 0);
-		Set_LED(2, 255, 0, 0);
+		Set_LED(0, 0, 255, 0);
+		Set_LED(1, 0, 255, 0);
+		Set_LED(2, 0, 255, 0);
 		Set_LED(3, 255, 0, 0);
 		Set_LED(4, 0, 0, 0);
 		Set_LED(5, 0, 0, 0);

@@ -1164,7 +1164,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	while (1) {
-		/* USER CODE END WHILE */
+    /* USER CODE END WHILE */
 
 		HAL_ADC_PollForConversion(&hadc1, 1000);
  8000d6e:	f44f 717a 	mov.w	r1, #1000	; 0x3e8
@@ -1685,6 +1685,8 @@ static void MX_GPIO_Init(void)
  8001060:	b480      	push	{r7}
  8001062:	b085      	sub	sp, #20
  8001064:	af00      	add	r7, sp, #0
+/* USER CODE BEGIN MX_GPIO_Init_1 */
+/* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOD_CLK_ENABLE();
@@ -1721,6 +1723,8 @@ static void MX_GPIO_Init(void)
  80010aa:	607b      	str	r3, [r7, #4]
  80010ac:	687b      	ldr	r3, [r7, #4]
 
+/* USER CODE BEGIN MX_GPIO_Init_2 */
+/* USER CODE END MX_GPIO_Init_2 */
 }
  80010ae:	bf00      	nop
  80010b0:	3714      	adds	r7, #20
@@ -1768,10 +1772,10 @@ void LEDHandler(int Value) {
  80010e8:	687b      	ldr	r3, [r7, #4]
  80010ea:	2b09      	cmp	r3, #9
  80010ec:	dc3c      	bgt.n	8001168 <LEDHandler+0xac>
-		Set_LED(0, 255, 0, 0);
+		Set_LED(0, 0, 255, 0);
  80010ee:	2300      	movs	r3, #0
- 80010f0:	2200      	movs	r2, #0
- 80010f2:	21ff      	movs	r1, #255	; 0xff
+ 80010f0:	22ff      	movs	r2, #255	; 0xff
+ 80010f2:	2100      	movs	r1, #0
  80010f4:	2000      	movs	r0, #0
  80010f6:	f000 fad9 	bl	80016ac <Set_LED>
 		Set_LED(1, 0, 0, 0);
@@ -1836,16 +1840,16 @@ void LEDHandler(int Value) {
  800116e:	687b      	ldr	r3, [r7, #4]
  8001170:	2b13      	cmp	r3, #19
  8001172:	dc3c      	bgt.n	80011ee <LEDHandler+0x132>
-		Set_LED(0, 255, 0, 0);
+		Set_LED(0, 0, 255, 0);
  8001174:	2300      	movs	r3, #0
- 8001176:	2200      	movs	r2, #0
- 8001178:	21ff      	movs	r1, #255	; 0xff
+ 8001176:	22ff      	movs	r2, #255	; 0xff
+ 8001178:	2100      	movs	r1, #0
  800117a:	2000      	movs	r0, #0
  800117c:	f000 fa96 	bl	80016ac <Set_LED>
-		Set_LED(1, 255, 0, 0);
+		Set_LED(1, 0, 255, 0);
  8001180:	2300      	movs	r3, #0
- 8001182:	2200      	movs	r2, #0
- 8001184:	21ff      	movs	r1, #255	; 0xff
+ 8001182:	22ff      	movs	r2, #255	; 0xff
+ 8001184:	2100      	movs	r1, #0
  8001186:	2001      	movs	r0, #1
  8001188:	f000 fa90 	bl	80016ac <Set_LED>
 		Set_LED(2, 0, 0, 0);
@@ -1904,22 +1908,22 @@ void LEDHandler(int Value) {
  80011f4:	687b      	ldr	r3, [r7, #4]
  80011f6:	2b1d      	cmp	r3, #29
  80011f8:	dc3c      	bgt.n	8001274 <LEDHandler+0x1b8>
-		Set_LED(0, 255, 0, 0);
+		Set_LED(0, 0, 255, 0);
  80011fa:	2300      	movs	r3, #0
- 80011fc:	2200      	movs	r2, #0
- 80011fe:	21ff      	movs	r1, #255	; 0xff
+ 80011fc:	22ff      	movs	r2, #255	; 0xff
+ 80011fe:	2100      	movs	r1, #0
  8001200:	2000      	movs	r0, #0
  8001202:	f000 fa53 	bl	80016ac <Set_LED>
-		Set_LED(1, 255, 0, 0);
+		Set_LED(1, 0, 255, 0);
  8001206:	2300      	movs	r3, #0
- 8001208:	2200      	movs	r2, #0
- 800120a:	21ff      	movs	r1, #255	; 0xff
+ 8001208:	22ff      	movs	r2, #255	; 0xff
+ 800120a:	2100      	movs	r1, #0
  800120c:	2001      	movs	r0, #1
  800120e:	f000 fa4d 	bl	80016ac <Set_LED>
-		Set_LED(2, 255, 0, 0);
+		Set_LED(2, 0, 255, 0);
  8001212:	2300      	movs	r3, #0
- 8001214:	2200      	movs	r2, #0
- 8001216:	21ff      	movs	r1, #255	; 0xff
+ 8001214:	22ff      	movs	r2, #255	; 0xff
+ 8001216:	2100      	movs	r1, #0
  8001218:	2002      	movs	r0, #2
  800121a:	f000 fa47 	bl	80016ac <Set_LED>
 		Set_LED(3, 0, 0, 0);
@@ -1972,22 +1976,22 @@ void LEDHandler(int Value) {
  800127a:	687b      	ldr	r3, [r7, #4]
  800127c:	2b27      	cmp	r3, #39	; 0x27
  800127e:	dc3c      	bgt.n	80012fa <LEDHandler+0x23e>
-		Set_LED(0, 255, 0, 0);
+		Set_LED(0, 0, 255, 0);
  8001280:	2300      	movs	r3, #0
- 8001282:	2200      	movs	r2, #0
- 8001284:	21ff      	movs	r1, #255	; 0xff
+ 8001282:	22ff      	movs	r2, #255	; 0xff
+ 8001284:	2100      	movs	r1, #0
  8001286:	2000      	movs	r0, #0
  8001288:	f000 fa10 	bl	80016ac <Set_LED>
-		Set_LED(1, 255, 0, 0);
+		Set_LED(1, 0, 255, 0);
  800128c:	2300      	movs	r3, #0
- 800128e:	2200      	movs	r2, #0
- 8001290:	21ff      	movs	r1, #255	; 0xff
+ 800128e:	22ff      	movs	r2, #255	; 0xff
+ 8001290:	2100      	movs	r1, #0
  8001292:	2001      	movs	r0, #1
  8001294:	f000 fa0a 	bl	80016ac <Set_LED>
-		Set_LED(2, 255, 0, 0);
+		Set_LED(2, 0, 255, 0);
  8001298:	2300      	movs	r3, #0
- 800129a:	2200      	movs	r2, #0
- 800129c:	21ff      	movs	r1, #255	; 0xff
+ 800129a:	22ff      	movs	r2, #255	; 0xff
+ 800129c:	2100      	movs	r1, #0
  800129e:	2002      	movs	r0, #2
  80012a0:	f000 fa04 	bl	80016ac <Set_LED>
 		Set_LED(3, 255, 0, 0);
